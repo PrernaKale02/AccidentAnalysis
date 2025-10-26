@@ -8,13 +8,12 @@ app = Flask(__name__)
 CORS(app)
 
 # --- Define Cluster Descriptions ---
-# Based on the analysis from train_model.py, we create simple descriptions.
 CLUSTER_DESCRIPTIONS = {
-    "0": "Common Midday Accident: Low injury, standard vehicles.",
-    "1": "Afternoon Rush-Hour: Higher chance of injury.",
-    "2": "Early Afternoon Accident: Medium injury risk.",
-    "3": "Standard Midday Accident: Low injury risk.",
-    "4" : "Minor Afternoon Incident: Very low injury, fewest vehicles."
+    "0": "Avg. Hour: ~12:15 PM, Injury Risk: Medium-Low (0.37)",
+    "1": "Avg. Hour: ~2:45 PM, Injury Risk: High (0.46)",
+    "2": "Avg. Hour: ~1:20 PM, Injury Risk: Medium-High (0.40)",
+    "3": "Catch-all Cluster: Avg. hour ~1:00 PM, but includes many off-peak outliers.",
+    "4": "Avg. Hour: ~2:20 PM, Injury Risk: Lowest (0.15)"
 }
 
 # --- Load All Models and Data ---
