@@ -64,13 +64,13 @@ The main tasks performed are:
 3.  **Install the required libraries:**
    use either the requirements.txt or install manually
 
-        ```bash
+   ```bash
         pip install -r requirements.txt
-        ```
+   ```
 
-        ```bash
+  ```bash
         pip install flask flask-cors pandas scikit-learn imbalanced-learn
-        ```
+  ```
 
 5.  **Place the Dataset:**
 
