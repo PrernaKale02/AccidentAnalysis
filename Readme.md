@@ -62,23 +62,22 @@ The main tasks performed are:
     ```
 
 3.  **Install the required libraries:**
+   use either the requirements.txt or install manually
 
         ```bash
         pip install -r requirements.txt
         ```
 
-    OR
-
         ```bash
         pip install flask flask-cors pandas scikit-learn imbalanced-learn
         ```
 
-4.  **Place the Dataset:**
+5.  **Place the Dataset:**
 
     - Download `traffic_accidents.csv` from the Kaggle link above.
     - Create a folder `backend/data/` and place the CSV file inside it.
 
-5.  **Train the Models:**
+6.  **Train the Models:**
 
     - This is a one-time step. Run the training script to clean the data, apply SMOTE, and save the model files (`.pkl`).
 
@@ -87,7 +86,7 @@ The main tasks performed are:
     python train.py
     ```
 
-6.  **Run the Flask API Server:**
+7.  **Run the Flask API Server:**
     - Once the models are trained, start the server.
     ```bash
     python app.py
