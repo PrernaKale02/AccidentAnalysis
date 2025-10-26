@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Accident Severity Predictor</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Traffic Accident Severity Analysis</h1>
+		</header>
+
+		<div class="container">
+			<main class="form-container">
+				<h2>Predict Accident Severity</h2>
+				<p>
+					Fill in the details of an accident to predict its severity and see a
+					cluster analysis.
+				</p>
+
+				<form id="prediction-form">
+					<div class="form-group">
+						<label for="weather">Weather Condition</label>
+						<select id="weather" name="weather_condition" required>
+							<option value="CLEAR">Clear</option>
+							<option value="RAIN">Rain</option>
+							<option value="CLOUDY/OVERCAST">Cloudy/Overcast</option>
+							<option value="SNOW">Snow</option>
+							<option value="OTHER">Other</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="lighting">Lighting Condition</label>
+						<select id="lighting" name="lighting_condition" required>
+							<option value="DAYLIGHT">Daylight</option>
+							<option value="DARKNESS, LIGHTED ROAD">
+								Darkness, Lighted Road
+							</option>
+							<option value="DARKNESS">Darkness, No Lights</option>
+							<option value="DUSK">Dusk</option>
+							<option value="DAWN">Dawn</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="cause">Primary Cause</label>
+						<select id="cause" name="prim_contributory_cause" required>
+							<option value="UNABLE TO DETERMINE">Unable to Determine</option>
+							<option value="FAILING TO YIELD RIGHT-OF-WAY">
+								Failing to Yield
+							</option>
+							<option value="FOLLOWING TOO CLOSELY">
+								Following Too Closely
+							</option>
+							<option value="NOT APPLICABLE">Not Applicable</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="hour">Crash Hour (0-23)</label>
+						<input
+							type="number"
+							id="hour"
+							name="crash_hour"
+							min="0"
+							max="23"
+							value="12"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="day">Day of Week (1=Mon, 7=Sun)</label>
+						<input
+							type="number"
+							id="day"
+							name="crash_day_of_week"
+							min="1"
+							max="7"
+							value="1"
+							required
+						/>
+					</div>
+
+					<button type="submit" id="submit-button">Analyze Accident</button>
+				</form>
+			</main>
+
+			<aside class="results-container">
+				<div class="result-box" id="prediction-box">
+					<h2>Prediction Result</h2>
+					<h3 id="result-text">---</h3>
+					<div class="chart-container">
+						<canvas id="probability-chart"></canvas>
+					</div>
+				</div>
+
+				<div class="result-box" id="analysis-box">
+					<h2>Input Analysis</h2>
+					<p>Your input matches: <strong id="cluster-num">---</strong></p>
+					<p id="cluster-description">---</p>
+				</div>
+			</aside>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+# Python virtual environment
+venv/
+*.venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Generated model and data files
+# We want to keep the code, not the large trained models
+*.pkl
+cluster_analysis.json
+
+# Raw dataset
+# Large data files should not be committed to Git
+data/
